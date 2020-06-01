@@ -1,11 +1,10 @@
 {
   "development": {
-    "username": "root",
-    "password": null,
+    "username": "postgres",
+    "password": "root",
     "database": "Dojolobby",
-    "host": "127.0.0.1",
+    "host": "localhost",
     "dialect": "postgres",
-    "operatorsAliases": false
   },
   "test": {
     "username": "root",
