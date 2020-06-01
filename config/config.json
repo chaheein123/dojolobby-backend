@@ -4,7 +4,7 @@
     "password": "root",
     "database": "Dojolobby",
     "host": "localhost",
-    "dialect": "postgres",
+    "dialect": "postgres"
   },
   "test": {
     "username": "root",

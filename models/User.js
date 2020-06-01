@@ -10,15 +10,20 @@ const Person = sequelize.define("user", {
     primaryKey: true,
   },
   firstName: {
-    type: Sequelize.STRING,
+    type: Sequelize.STRING(25),
     allowNull: false,
   },
   lastName: {
-    type: Sequelize.STRING,
+    type: Sequelize.STRING(25),
     allowNull: false,
   },
   userEmail: {
-    type: Sequelize.STRING,
+    type: Sequelize.STRING(254),
+    allowNull: false,
+    unique: true
+  },
+  userPw: {
+    type: Sequelize.STRING(35),
     allowNull: false,
   }
 })
