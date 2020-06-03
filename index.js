@@ -3,6 +3,8 @@ const app = express();
 const bodyParser = require("body-parser");
 const path = require("path");
 const Sequelize = require("sequelize");
+const _ = require("lodash")._;
+const Faker = require("faker");
 
 // body parser middleware
 app.use(express.urlencoded({
@@ -14,5 +16,7 @@ app.listen(4000, console.log("Server started on port 4000"));
 
 module.exports = {
   app,
-  Sequelize
+  Sequelize,
+  _,
+  Faker
 }

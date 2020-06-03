@@ -3,6 +3,7 @@ const {
 } = require("./index");
 
 require("./database/connection");
+require("./database/bootstrap")();
 
 // testing DB
 sequelize

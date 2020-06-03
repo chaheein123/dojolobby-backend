@@ -2,7 +2,7 @@ const {
   Sequelize
 } = require("../index");
 
-const Person = sequelize.define("user", {
+module.exports = sequelize.define("users", {
   id: {
     type: Sequelize.INTEGER,
     allowNull: false,
@@ -20,10 +20,13 @@ const Person = sequelize.define("user", {
   userEmail: {
     type: Sequelize.STRING(254),
     allowNull: false,
-    unique: true
+    unique: true,
+    validate: {
+      isEmail: true
+    }
   },
   userPw: {
     type: Sequelize.STRING(35),
     allowNull: false,
   }
-})
+});
