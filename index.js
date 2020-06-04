@@ -5,6 +5,8 @@ const path = require("path");
 const Sequelize = require("sequelize");
 const _ = require("lodash")._;
 const Faker = require("faker");
+const graphqlHTTP = require("express-graphql");
+const graphql = require("graphql");
 
 // body parser middleware
 app.use(express.urlencoded({
@@ -18,5 +20,7 @@ module.exports = {
   app,
   Sequelize,
   _,
-  Faker
-}
+  Faker,
+  graphql,
+  graphqlHTTP,
+};

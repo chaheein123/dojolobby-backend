@@ -1,9 +1,16 @@
 const {
   app,
+  graphqlHTTP
 } = require("./index");
 
+const schema = require("./schema/schema");
+
+app.use("/graphql", graphqlHTTP({
+  schema
+}));
+
 require("./database/connection");
-require("./database/bootstrap")();
+// require("./database/bootstrap")();
 
 // testing DB
 sequelize

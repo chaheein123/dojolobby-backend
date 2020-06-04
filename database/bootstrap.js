@@ -14,7 +14,7 @@ module.exports = async() => {
     console.error("Error: ", err);
   };
 
-  _.times(60, ()=>{
+  _.times(20, ()=>{
     // return User.create({
     //   firstName: Faker.name.firstName(),
     //   lastName: Faker.name.lastName(),
@@ -26,11 +26,12 @@ module.exports = async() => {
       lastName: Faker.name.lastName(),
       userEmail: Faker.internet.email(),
       userPw: Faker.internet.password()
-    }).then(() => {
+    }).then((result) => {
+      // console.log("산소부족해이", JSON.stringify(result.id))
       Post 
         .create({
           content: Faker.lorem.sentences(3),
-          userId: user.id,
+          userId: JSON.stringify(result.id),
           createdAt: Date.now()
         })
       })
