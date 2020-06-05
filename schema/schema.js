@@ -14,22 +14,22 @@ const UserType = new GraphQLObjectType({
   name: "User",
   fields: () => ({
     id: {type: GraphQLID},
-    content: {type: GraphQLString},
+    firstName: {type: GraphQLString},
+    lastName: {type: GraphQLString},
+    userEmail: {type: GraphQLString},
+    userPw: {type: GraphQLString},
     createdAt: {type: GraphQLString},
     updatedAt: {type: GraphQLString}
   })
 });
 
 const RootQuery = new GraphQLObjectType({
-  name: "RootQueryType",
+  name: "Query",
   fields: {
     user: {
       type: UserType,
-      args: {id: {type: GraphQLString}},
-      resolve(parent, args){
-        return _.find(, {id: args.id})
-      }
-    }
+      args: {id: {type: GraphQLID}},
+    },
   }
 });
 

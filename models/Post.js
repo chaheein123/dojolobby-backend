@@ -1,13 +1,15 @@
-const {
-  Sequelize
-} = require("../index");
+const Sequelize = require("sequelize");
 
-module.exports = sequelize.define("posts", {
+const Post = sequelize.define("posts", {
   id: {
     type: Sequelize.INTEGER,
     allowNull: false,
     autoIncrement: true,
     primaryKey: true,
+  },
+  title: {
+    type: Sequelize.STRING, 
+    allowNull: false,
   },
   content: {
     type: Sequelize.STRING,
@@ -22,3 +24,9 @@ module.exports = sequelize.define("posts", {
     allowNull: true
   }
 });
+
+Post.associate = function(models){
+  Post.belongsTo(models.User, {foreignKey: "userId"});
+};
+
+module.exports = Post;

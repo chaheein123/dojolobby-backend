@@ -1,8 +1,6 @@
-const {
-  Sequelize
-} = require("../index");
+const Sequelize = require("sequelize");
 
-module.exports = sequelize.define("users", {
+const User = sequelize.define("users", {
   id: {
     type: Sequelize.INTEGER,
     allowNull: false,
@@ -30,3 +28,9 @@ module.exports = sequelize.define("users", {
     allowNull: false,
   }
 });
+
+User.associate = function(models){
+  User.hasMany(models.Post);
+};
+
+module.exports = User;

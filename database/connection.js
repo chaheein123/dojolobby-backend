@@ -1,10 +1,10 @@
 const {
   Sequelize
-} = require("../index");
+} = require("sequelize");
 
 const sequelize = new Sequelize(
   "Dojolobby", 
-  "postgres", 
+  "postgres", //username
   "root", 
   {
     host: "localhost",
