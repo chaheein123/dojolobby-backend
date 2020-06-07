@@ -30,7 +30,8 @@ const User = sequelize.define("users", {
 });
 
 User.associate = function(models){
-  User.hasMany(models.Post);
+  User.hasMany(models.Post, {as: "posts"});
+  User.hasMany(models.Like, {as: "likes"});
 };
 
 module.exports = User;

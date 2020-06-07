@@ -7,6 +7,14 @@ const Post = sequelize.define("posts", {
     autoIncrement: true,
     primaryKey: true,
   },
+  userId: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
+  mainentitiesId: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  },
   title: {
     type: Sequelize.STRING, 
     allowNull: false,
@@ -26,7 +34,15 @@ const Post = sequelize.define("posts", {
 });
 
 Post.associate = function(models){
-  Post.belongsTo(models.User, {foreignKey: "userId"});
+
+  Post.belongsTo(models.User, {
+    foreignKey: "userId",
+    as: "user"
+  });
+  Post.belongsTo(models.MainEntity, {
+    foreignKey: "mainentitiesId",
+    as: "mainentity"
+  });
 };
 
 module.exports = Post;

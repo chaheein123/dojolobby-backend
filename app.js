@@ -4,37 +4,8 @@ const {
   ApolloServer,
   gql
 } = require("./index");
-
 const resolvers = require("./resolvers");
-
 require("./database/connection");
-
-// const schema = require("./schema/schema");
-
-//const {user} = require("./typeDefs");
-
-// const typeDefs = gql`
-//   type Query {
-//     users: [User],
-//     hello: String
-//   }
-//   type User {
-//     id: ID!
-//     firstName: String!
-//     lastName: String!
-//     userEmail: String!
-//     userPw: String!
-//     createdAt: String!
-//     updatedAt: String!
-//   }
-// `;
-
-/*app.use("/graphql", graphqlHTTP({
-  schema,
-  graphiql: true
-}));*/
-
-
 const models = require("./models");
 const typeDefs = require("./typeDefs");
 
