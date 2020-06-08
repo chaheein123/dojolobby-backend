@@ -1,3 +1,5 @@
+
+
 module.exports = {
   Query: {
     // users: async (parent, args, context, info) => {
@@ -12,27 +14,24 @@ module.exports = {
       return models.User.findByPk(id)
     },
     async posts(root, args, {models}){
-      
-      // return models.Post.findAll({include:["posts"]})
-      return models.Post.findAll();
+      const posts = await models.Post.findAll();
+      return posts;
+      // return models.Post.findAll();
     }
   },
 
   Post: {
-    createdBy(post){
-      // console.log("jojo",post.userId);
-      return post.getUser();
+    // createdBy: async (root, args, {models}, info) => {
 
-      // return {
-      //   "firstName": "aaa"
-      // };
-    }
+    //   console.log(models.User.findAll());
+    //   const users = await models.User();
+    //   return users;
+
+    // }
+    createdBy: (root, args, context, info) => root.getUsers()
   },
 
-  User : {
-    posts(user){
-      console.log(user);
-      // return user.getPost();
-    }
-  }
+  // User: {
+
+  // }
 }

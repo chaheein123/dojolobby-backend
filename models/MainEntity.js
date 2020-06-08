@@ -14,8 +14,8 @@ const MainEntity = sequelize.define(
 );
 
 MainEntity.associate = function(models){
-  MainEntity.hasMany(models.Post);
-  MainEntity.hasMany(models.Like);
+  // MainEntity.hasMany(models.Post);
+  // MainEntity.hasMany(models.Like);
 };
 
 module.exports = MainEntity;

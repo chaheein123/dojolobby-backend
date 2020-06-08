@@ -34,15 +34,16 @@ const Post = sequelize.define("posts", {
 });
 
 Post.associate = function(models){
+  console.log("mayweather!!!!", models);
 
-  Post.belongsTo(models.User, {
+  Post.belongsTo(models.users, {
     foreignKey: "userId",
     as: "user"
   });
-  Post.belongsTo(models.MainEntity, {
-    foreignKey: "mainentitiesId",
-    as: "mainentity"
-  });
+  // Post.belongsTo(models.MainEntity, {
+  //   foreignKey: "mainentitiesId",
+  //   as: "mainentity"
+  // });
 };
 
 module.exports = Post;

@@ -13,7 +13,6 @@ const typeDefs = gql`
     firstName: String!
     lastName: String!
     userEmail: String!
-    posts: [Post!]
   }
   type Post {
     id: ID!

@@ -7,15 +7,23 @@ module.exports = async() => {
     console.error("Error: ", err);
   };
 
-  MainEntity.create().then(result => {
-    Post.create({
-      title: "This is awesome!!!",
-      content: "I love this song!!! This sobng is awesome. This language is so easy!!",
-      userEmail: "sfe@gmail.com",
-      userId: 1,
-      mainentitiesId:1,
-    })
-  })
+  // User.create({
+  //   firstName: "Jimmy",
+  //   lastName: "Johnson",
+  //   userEmail: "jjj@gmail.com",
+  //   userPw: "123123123"
+  // })
+
+  // Post.create({
+  //   userId: 2,
+  //   mainentitiesId: 1,
+  //   title: "Haha",
+  //   content: "Stock market is going up a!",
+
+  // })
+
+
+
 
   // _.times(20, ()=>{
 
