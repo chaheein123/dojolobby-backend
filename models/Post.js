@@ -34,11 +34,8 @@ const Post = sequelize.define("posts", {
 });
 
 Post.associate = function(models){
-  console.log("mayweather!!!!", models);
-
-  Post.belongsTo(models.users, {
+  Post.belongsTo(models.User, {
     foreignKey: "userId",
-    as: "user"
   });
   // Post.belongsTo(models.MainEntity, {
   //   foreignKey: "mainentitiesId",
